@@ -61,6 +61,6 @@ easyLoadingStyle: EasyLoadingStyle.dark,
 
 ## Additional information
 
-Made by :- Vaibhav Chandolia
-Email:- chandolia.vaibahv@gmail.com
-Website:- vaibhavchandolia.info
+- Made by :- Vaibhav Chandolia
+- Email:- chandolia.vaibhav@gmail.com
+- Website:- vaibhavchandolia.info
