@@ -1,39 +1,66 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+This Package is used for executing APIs in a very easy form.Handling all the status codes with a loading function built in.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Calling APIs in in a simple form.
+- Easy Loading built in.
+- Handling API error codes.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+- Set Base URL in main().
+- Set enableLoading true if you want to enable loading else set to false.
+```dart
+Restopi.baseUrl = "gorest.co.in";
+Restopi.enableLoading = true;
+```
+- If Enabling Loading you Need to Add Restopi().builderInit() .
+```dart
+MaterialApp(
+title: 'Flutter Demo',
+theme: ThemeData(
+primarySwatch: Colors.blue,
+),
+builder: Restopi.builderInit(),
+home: const MyHomePage(title: 'Flutter Demo Home Page'),
+);
+```
+- If Enabling Loading you can Add design to to your Loading by using:-
+```dart
+ Restopi().restopiInitialize(
+indicatorColor: Colors.black,
+progressColors: Colors.black,
+backgroundColor: Colors.blueAccent,
+textColor: Colors.red,
+maskColor: Colors.amber,
+indicatorSize: 30,
+radius: 20,
+userInteractions: true,
+dismissOnTap: false,
+easyLoadingIndicatorType: EasyLoadingIndicatorType.circle,
+easyLoadingStyle: EasyLoadingStyle.dark,
+);
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
-const like = 'sample';
+ Restopi().hitRestopi(
+    buildContext: context,
+    query: {},
+    body: {},
+    restopiMethod: RestopiMethods.post,
+    urlEndPoint: 'public/v2/users',
+    headers: {"content-language": "en"},
+    onFail: (value) {},
+    onConnectionLost: () {},
+    showLoading: true,
+    onSuccess: (value) {
+});
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+Made by :- Vaibhav Chandolia
+Email:- chandolia.vaibahv@gmail.com
+Website:- vaibhavchandolia.info
